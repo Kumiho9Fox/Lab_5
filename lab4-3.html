@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тюлячкина Мария</title>
+    <script>
+        function generateAndCalculate() {
+            var array = [];
+            for (var i = 0; i < 15; i++) {
+                array.push(Math.floor(Math.random() * 100)); 
+            }
+            document.getElementById("arrayOutput").innerHTML = "Исходный массив: " + array.join(", ");
+            var A = parseInt(document.getElementById("inputA").value);
+            var product = array.reduce((acc, curr, index) => {
+                if ((index + 1) % 4 === 0) {
+                    return acc * curr;
+                }
+                return acc;
+            }, 1);
+            var countLessThanA = array.filter(value => value < A).length;
+            document.getElementById("productOutput").innerHTML = "Произведение элементов на позициях, кратных 4: " + product;
+            document.getElementById("countOutput").innerHTML = "Количество элементов меньше " + A + ": " + countLessThanA;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="inputA" placeholder="Введите число A">
+    <button onclick="generateAndCalculate()">Посчитать</button>
+    <p id="arrayOutput"></p>
+    <p id="productOutput"></p>
+    <p id="countOutput"></p>
+</body>
+</html>

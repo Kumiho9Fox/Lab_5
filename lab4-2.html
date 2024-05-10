@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тюлячкина Мария</title>
+    <script>
+        window.onload = function() {
+            var array = [];
+            for (var i = 0; i < 15; i++) {
+                array.push(Math.floor(Math.random() * 100)); 
+            }
+            document.body.innerHTML = "<p>Исходный массив: " + array.join(", ") + "</p>";
+            var minIndex = 0;
+            for (var i = 1; i < array.length; i++) {
+                if (array[i] < array[minIndex]) {
+                    minIndex = i;
+                }
+            }
+            document.body.innerHTML += "<p>Минимальный элемент: " + array[minIndex];
+            if (minIndex < array.length - 1) {
+                var temp = array[minIndex];
+                array[minIndex] = array[minIndex + 1];
+                array[minIndex + 1] = temp;
+            }
+            document.body.innerHTML += "<p>Массив после изменения: " + array.join(", ") + "</p>";
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>

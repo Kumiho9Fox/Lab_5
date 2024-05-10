@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тюлячкина Мария</title>
+</head>
+<body>
+    <script>
+        let treug = [];
+        for (let n = 1; n <= 10; n++) {
+            treug.push(n * (n + 1) / 2);
+        }
+        document.body.innerHTML += `<p>Треугольные числа: ${treug.join('  ')}</p>`;
+        let kvd = [];
+        for (let i = 1; i <= 10; i++) {
+            kvd.push(i * i);
+        }
+        document.body.innerHTML += `<p>Квадраты натуральных чисел: ${kvd.join('  ')}</p>`;
+        let rez = treug.concat(kvd);
+        document.body.innerHTML += `<p>Объединенный массив: ${rez.join('  ')}</p>`;
+        rez.sort((a, b) => b - a);
+        document.body.innerHTML += `<p>Отсортированный в обратном порядке массив: ${rez.join('  ')}</p>`;
+    </script>
+</body>
+</html>

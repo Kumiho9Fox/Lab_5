@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тюлячкина Мария</title>
+</head>
+<body>
+    <script>
+        // 1. Создание массивов
+        const fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+        const citrus = ['orange', 'lemon', 'lime'];
+        // Вывод информации в тело документа
+        document.body.innerHTML += `<p>Массив fruits: ${fruits.join(' ')}</p>`;
+        document.body.innerHTML += `<p>Массив citrus: ${citrus.join(' ')}</p>`;
+        // в) Объединенный массив fruits и citrus
+        const combined = fruits.concat(citrus);
+        document.body.innerHTML += `<p>Объединенный массив fruits: ${combined.join(' ')}</p>`;
+        // г) Массив fruits, в который после mango вставлены другие элементы
+        const index = fruits.indexOf('mango') + 1;
+        const extendedFruits = fruits.slice(0, index).concat(['pear', 'cherry', 'plum', 'raspberry', 'strawberry']).concat(fruits.slice(index));
+        document.body.innerHTML += `<p>Массив fruits после вставки: ${extendedFruits.join(' ')}</p>`;
+        // д) Массив fruits, из которого удалены последние 3 элемента
+        const reducedFruits = fruits.slice(0, -3);
+        document.body.innerHTML += `<p>Массив fruits после удаления: ${reducedFruits.join(' ')}</p>`;
+        // е) Отсортированный в алфавитном порядке массив fruits
+        const sortedFruits = [...fruits].sort();
+        document.body.innerHTML += `<p>Отсортированный массив fruits: ${sortedFruits.join(' ')}</p>`;
+        // ж) Массив fruits в обратном алфавитном порядке
+        const reverseSortedFruits = [...fruits].sort().reverse();
+        document.body.innerHTML += `<p>Массив fruits в обратном порядке: ${reverseSortedFruits.join(' ')}</p>`;
+        // з) Массив fruits, отсортированный по длине слов
+        const lengthSortedFruits = [...fruits].sort((a, b) => a.length - b.length);
+        document.body.innerHTML += `<p>Массив fruits, отсортированный по длине слов: ${lengthSortedFruits.join(' ')}</p>`;
+    </script>
+</body>
+</html>
